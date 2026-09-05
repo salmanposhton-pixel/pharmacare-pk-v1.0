@@ -1,0 +1,45 @@
+{
+  "name": "pharmacare-pos-desktop",
+  "description": "PharmaCare POS Desktop Application",
+  "author": "Salman Said",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "vite --port=3000 --host=0.0.0.0",
+    "build": "vite build",
+    "preview": "vite preview",
+    "electron:dev": "vite",
+    "electron:build": "vite build && electron-builder",
+    "clean": "rimraf dist server.js dist-electron",
+    "lint": "tsc --noEmit"
+  },
+  "build": {
+    "appId": "com.pharmacare.pos.desktop",
+    "productName": "PharmaCare POS Desktop",
+    "copyright": "Copyright (c) 2026 PharmaCare PK",
+    "directories": {
+      "output": "dist-electron"
+    },
+    "files": [
+      "dist/**/*",
+      "electron/**/*",
+      "public/**/*"
+    ],
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  },
+  "devDependencies": {
+  "electron": "31.0.0",
+  "electron-builder": "26.15.3"
+}
+}

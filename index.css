@@ -1,0 +1,282 @@
+@import "tailwindcss";
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  10%, 25%, 45%, 65%, 85% { transform: translateX(-10px); }
+  17%, 35%, 55%, 75% { transform: translateX(10px); }
+}
+
+.animate-shake {
+  animation: shake 0.5s cubic-bezier(.36,.07,.19,.97) both;
+}
+
+@keyframes scanLineAnim {
+  0% {
+    top: 0%;
+    opacity: 0.8;
+  }
+  50% {
+    top: 94%;
+    opacity: 1;
+  }
+  100% {
+    top: 0%;
+    opacity: 0.8;
+  }
+}
+
+.animate-scan-line {
+  animation: scanLineAnim 2.2s ease-in-out infinite;
+}
+
+@keyframes pulseGlow {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(34, 211, 238, 0.4), 0 0 30px rgba(16, 185, 129, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 25px rgba(34, 211, 238, 0.8), 0 0 45px rgba(16, 185, 129, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 1.6s ease-in-out infinite;
+}
+
+/* Radiant Gold Box Style for Expiry Date Boxes */
+.gold-expiry-box {
+  background: linear-gradient(135deg, #D4AF37 0%, #FFDF73 50%, #B8860B 100%) !important;
+  color: #000000 !important;
+  border: 2px solid #FFF275 !important;
+  box-shadow: 0 4px 14px rgba(212, 175, 55, 0.55), inset 0 1px 2px rgba(255, 255, 255, 0.8) !important;
+  font-weight: 900 !important;
+}
+
+/* Custom CSS Keyframes & Animations for License Dashboard Tooltips */
+@keyframes tooltipFadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(4px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes tooltipFadeInTop {
+  from {
+    opacity: 0;
+    transform: translateY(-4px) scale(0.96);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+.animate-tooltip-fade {
+  animation: tooltipFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.animate-tooltip-fade-top {
+  animation: tooltipFadeInTop 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* Hover Tooltip Helper Class for Metric Cards */
+.metric-tooltip-trigger {
+  position: relative;
+}
+
+.metric-tooltip-trigger .metric-tooltip {
+  visibility: hidden;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s cubic-bezier(0.16, 1, 0.3, 1), transform 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+  transform: translateY(6px) scale(0.96);
+}
+
+.metric-tooltip-trigger:hover .metric-tooltip,
+.metric-tooltip-trigger:focus-within .metric-tooltip {
+  visibility: visible;
+  opacity: 1;
+  pointer-events: auto;
+  transform: translateY(0) scale(1);
+  animation: tooltipFadeIn 0.22s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+/* =========================================================================
+   3D TRANSFORM, PERSPECTIVE & LUXURY ROYAL GOLD ANIMATION SUITE
+   ========================================================================= */
+
+/* 3D Perspective Container */
+.perspective-container {
+  perspective: 1200px;
+}
+
+/* Interactive 3D Card with Tilt & Dynamic Depth Shadow */
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.35s cubic-bezier(0.34, 1.56, 0.64, 1), box-shadow 0.35s ease;
+  will-change: transform, box-shadow;
+}
+
+.card-3d:hover {
+  transform: translateY(-4px) translateZ(10px) rotateX(1.8deg) rotateY(-1.2deg);
+  box-shadow: 0 20px 35px -10px rgba(0, 0, 0, 0.8), 0 0 25px rgba(245, 158, 11, 0.3);
+}
+
+/* 3D Floating Levitation Keyframe */
+@keyframes float3d {
+  0%, 100% {
+    transform: translateY(0px) rotateX(0deg) rotateY(0deg);
+  }
+  50% {
+    transform: translateY(-8px) rotateX(3deg) rotateY(-2deg);
+  }
+}
+
+/* 3D Coin & Shield Spin Keyframe */
+@keyframes spin3d {
+  0% {
+    transform: rotateY(0deg);
+  }
+  100% {
+    transform: rotateY(360deg);
+  }
+}
+
+/* Golden Halo Pulse Glow */
+@keyframes pulseGlowGold {
+  0%, 100% {
+    box-shadow: 0 0 15px rgba(245, 158, 11, 0.4), 0 0 30px rgba(217, 119, 6, 0.2);
+    transform: scale(1);
+  }
+  50% {
+    box-shadow: 0 0 28px rgba(245, 158, 11, 0.8), 0 0 50px rgba(217, 119, 6, 0.4);
+    transform: scale(1.02);
+  }
+}
+
+/* Dynamic Golden Light Sweep Shimmer */
+@keyframes goldShimmer {
+  0% {
+    background-position: -200% 0;
+  }
+  100% {
+    background-position: 200% 0;
+  }
+}
+
+.animate-float-3d {
+  animation: float3d 4s ease-in-out infinite;
+}
+
+.animate-spin-3d {
+  animation: spin3d 10s linear infinite;
+}
+
+.animate-pulse-gold {
+  animation: pulseGlowGold 2s ease-in-out infinite;
+}
+
+/* 3D Embossed Golden Action Button */
+.btn-3d-gold {
+  background: linear-gradient(135deg, #d97706 0%, #fbbf24 50%, #b45309 100%);
+  box-shadow: 0 4px 0 #78350f, 0 10px 20px rgba(217, 119, 6, 0.35);
+  transition: all 0.15s ease;
+  transform: translateY(0);
+}
+
+.btn-3d-gold:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #78350f, 0 14px 25px rgba(217, 119, 6, 0.45);
+}
+
+.btn-3d-gold:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #78350f, 0 4px 10px rgba(217, 119, 6, 0.2);
+}
+
+/* Luxury Metallic Gold Text */
+.gold-metallic-text {
+  background: linear-gradient(135deg, #fef08a 0%, #f59e0b 50%, #d97706 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-shadow: 0 2px 10px rgba(245, 158, 11, 0.25);
+}
+
+/* Fullscreen PC Fit Layout Classes */
+.pc-screen-fit {
+  width: 100vw;
+  height: 100vh;
+  max-width: 100vw;
+  max-height: 100vh;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 3D Embossed Emerald Button */
+.btn-3d-emerald {
+  background: linear-gradient(135deg, #059669 0%, #10b981 50%, #047857 100%);
+  box-shadow: 0 4px 0 #064e3b, 0 10px 20px rgba(16, 185, 129, 0.35);
+  transition: all 0.15s ease;
+  transform: translateY(0);
+}
+
+.btn-3d-emerald:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #064e3b, 0 14px 25px rgba(16, 185, 129, 0.45);
+}
+
+.btn-3d-emerald:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #064e3b, 0 4px 10px rgba(16, 185, 129, 0.2);
+}
+
+/* 3D Embossed Cyan Button */
+.btn-3d-cyan {
+  background: linear-gradient(135deg, #0891b2 0%, #06b6d4 50%, #0e7490 100%);
+  box-shadow: 0 4px 0 #155e75, 0 10px 20px rgba(6, 182, 212, 0.35);
+  transition: all 0.15s ease;
+  transform: translateY(0);
+}
+
+.btn-3d-cyan:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 0 #155e75, 0 14px 25px rgba(6, 182, 212, 0.45);
+}
+
+.btn-3d-cyan:active {
+  transform: translateY(3px);
+  box-shadow: 0 1px 0 #155e75, 0 4px 10px rgba(6, 182, 212, 0.2);
+}
+
+/* 3D Glassmorphism Panel with Golden & Emerald Neon Trims */
+.glass-panel-3d {
+  background: linear-gradient(145deg, rgba(15, 23, 42, 0.96) 0%, rgba(6, 23, 17, 0.98) 100%);
+  border: 1.5px solid rgba(245, 158, 11, 0.45);
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.9), 0 0 30px rgba(245, 158, 11, 0.15), inset 0 1px 0 rgba(254, 240, 138, 0.2);
+  transform-style: preserve-3d;
+}
+
+/* Custom Scrollbar for compact panels */
+.custom-scrollbar-gold::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar-gold::-webkit-scrollbar-track {
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 9999px;
+}
+.custom-scrollbar-gold::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #f59e0b, #d97706);
+  border-radius: 9999px;
+}
+.custom-scrollbar-gold::-webkit-scrollbar-thumb:hover {
+  background: #fbbf24;
+}
+
+
